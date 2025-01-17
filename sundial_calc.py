@@ -142,7 +142,7 @@ def project_3D_to_paper(sun_path_positions, R, R_pipe, latitude):
         x_rot, y_rot, z_rot = rotation_matrix_x.dot([x, y, z])
         
         # Calculate the angle theta in the xy-plane
-        theta = np.arctan2(y_rot, x_rot)
+        theta = -np.arctan2(y_rot, x_rot)
         
         # Project the angle theta onto the paper's x-axis
         x_proj = R_pipe * theta
